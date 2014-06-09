@@ -2,14 +2,14 @@
 d-i debian-installer/add-kernel-opts string video=off elevator=deadline
 
 # Skip creation of a normal user account.
-d-i passwd/make-user boolean false
+#d-i passwd/make-user boolean false
 
 
 # Any hostname and domain names assigned from dhcp take precedence over
 # values set here. However, setting the values still prevents the questions
 # from being shown, even if values come from dhcp.
-d-i netcfg/get_hostname string apu
-
+#d-i netcfg/get_hostname string apu
+d-i netcfg/get_hostname seen false
 
 # Automatically label the disk without asking
 d-i partman-auto/choose_recipe select boot-root
@@ -62,16 +62,16 @@ popularity-contest popularity-contest/participate boolean false
 #####
 ## Things you may want to change ##
 
-d-i debian-installer/locale string en_US.UTF-8
-d-i debian-installer/language string en
-d-i debian-installer/country string CH
+d-i debian-installer/locale string it_IT.UTF-8
+d-i debian-installer/language string it
+d-i debian-installer/country string IT
 
 ### Clock and time zone setup
 d-i clock-setup/utc boolean true
-d-i time/zone string Europe/Zurich
+d-i time/zone string Europe/Rome
 
-passwd   passwd/root-password    password pcengines
-passwd   passwd/root-password-again  password pcengines
+#passwd   passwd/root-password    password pcengines
+#passwd   passwd/root-password-again  password pcengines
 
 
 d-i mirror/protocol string http
