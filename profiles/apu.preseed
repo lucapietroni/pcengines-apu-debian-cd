@@ -8,7 +8,7 @@ d-i debian-installer/add-kernel-opts string video=off elevator=deadline
 # Any hostname and domain names assigned from dhcp take precedence over
 # values set here. However, setting the values still prevents the questions
 # from being shown, even if values come from dhcp.
-#d-i netcfg/get_hostname string apu
+d-i netcfg/get_hostname string apu
 d-i netcfg/get_hostname seen false
 
 # Automatically label the disk without asking
